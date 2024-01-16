@@ -30,6 +30,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+
+
+
+//componentes do projeto
 import { NavComponent } from './components/nav/nav.component';
 
 
@@ -39,6 +43,8 @@ import { NavComponent } from './components/nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
+
+    //os components do projeto precisam estar declarados aqui
     NavComponent
   ],
   imports: [
