@@ -6,8 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [{
 
   //quando o path for vazio oque renderiza é NavComponent
-  path:'',component: NavComponent, children: [
-   {path: 'home', component: HomeComponent}
+  path:'',component: NavComponent, 
+  //a home é filha do path vazio , ela herda oque é renderizado no path '' , e é renderizado dentro dele
+  children: [{path: 'home', component: HomeComponent}
   ]},
 ];
 
