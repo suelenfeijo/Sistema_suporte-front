@@ -2,4 +2,17 @@
 
 .container{
 height: 100%;
+}.sidenav{
+    width: 10rem;
+    color: white;
+    background: linear-gradient(180deg, rgba(65,170,235,1) 0%, rgba(151,15,255,1) 100%, rgba(2,175,210,1) 100%); 
+
+}img{
+    width: 100%;
+    height: 7rem;
+
+    /* cima , lateral direita  pra esquerda, baixo, esquerda pra direita */
+    margin: .8rem auto 1rem auto;
 }
+
+
