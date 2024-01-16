@@ -35,6 +35,7 @@ import { MatCardModule } from '@angular/material/card';
 
 //componentes do projeto
 import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -45,7 +46,8 @@ import { NavComponent } from './components/nav/nav.component';
     AppComponent,
 
     //os components do projeto precisam estar declarados aqui
-    NavComponent
+    NavComponent,
+     HomeComponent
   ],
   imports: [
     BrowserModule,
