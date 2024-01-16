@@ -8,11 +8,21 @@ height: 100%;
     background: linear-gradient(180deg, rgba(65,170,235,1) 0%, rgba(151,15,255,1) 100%, rgba(2,175,210,1) 100%); 
 
 }img{
-    width: 100%;
+    width: 90%;
     height: 7rem;
 
     /* cima , lateral direita  pra esquerda, baixo, esquerda pra direita */
-    margin: .8rem auto 1rem auto;
+    margin: .8rem auto 1rem 1rem;
+}.sidenav a{
+    color: white;
+}.sidenav i{
+    margin-right: 1rem;
+}.menu{
+    margin: 1rem 0 0 1rem;
+    color: white;
+    background: linear-gradient(180deg, rgba(65,170,235,1) 0%, rgba(151,15,255,1) 100%, rgba(2,175,210,1) 100%); 
+
+
 }
 
 
