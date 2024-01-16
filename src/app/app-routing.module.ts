@@ -4,10 +4,9 @@ import { NavComponent } from './components/nav/nav.component';
 
 const routes: Routes = [{
 
-  //quando o path for vazio
-  path:'',
-  component: NavComponent
-}];
+  //quando o path for vazio oque renderiza é NavComponent
+  path:'',component: NavComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
