@@ -40,6 +40,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr'
+import { JwtModule } from "@auth0/angular-jwt";
+
 
 
 
@@ -85,6 +87,7 @@ import { ToastrModule } from 'ngx-toastr'
    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
