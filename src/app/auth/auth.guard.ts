@@ -5,11 +5,20 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthGuard implements CanActivate {
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean {
-    return true;
+    return false;
+  }
+
+  isAuthenticated(){
+    let token = localStorage.getItem('token');
+    if(token != null){
+
+    }
   }
   
 }
