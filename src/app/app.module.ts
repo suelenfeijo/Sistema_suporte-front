@@ -40,7 +40,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr'
-import { JwtModule } from "@auth0/angular-jwt";
+import { JwtModule } from '@auth0/angular-jwt';
+import { DecorationComponent } from './components/decoration/decoration.component'; 
 
 
 
@@ -51,10 +52,11 @@ import { JwtModule } from "@auth0/angular-jwt";
 
     //os components do projeto precisam estar declarados aqui
     NavComponent,
-     HomeComponent,
-     HeaderComponent,
-     TecnicoListComponent,
-     LoginComponent
+    HomeComponent,
+    HeaderComponent,
+    TecnicoListComponent,
+    LoginComponent,
+    DecorationComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,7 @@ import { JwtModule } from "@auth0/angular-jwt";
     progressBar: true
    }),
   ],
-  providers: [],
+  providers: [JwtModule],
   bootstrap: [AppComponent],
   
 })
