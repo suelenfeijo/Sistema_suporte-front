@@ -58,7 +58,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     TecnicoListComponent,
     LoginComponent,
     DecorationComponent,
-    AuthInterceptorProvider,
+    
   ],
   imports: [
     BrowserModule,
@@ -84,6 +84,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    
    ToastrModule.forRoot({
     timeOut: 4000,
     closeButton: true,

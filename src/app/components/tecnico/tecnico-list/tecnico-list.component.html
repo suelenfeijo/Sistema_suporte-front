@@ -1,4 +1,17 @@
 <div class="container">
+
+  <!--button-->
+  <h1>Listagem de Técnicos</h1>
+  <button class="mat-elevation-z4" mat-raised-button>Novo Técnico</button>
+
+  <!--Filtro-->
+  <mat-form-field>
+    <mat-label>Pesquisar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Feijo" #input>
+  </mat-form-field>
+
+
+  <!--table-->
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
       
