@@ -12,7 +12,8 @@ export class AuthService {
 
   jwtService: JwtHelperService = new JwtHelperService();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router) { }
 
   authenticate(creds: Credenciais) {
     return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
@@ -31,5 +32,11 @@ export class AuthService {
       return !this.jwtService.isTokenExpired(token)
     }
     return false
+  }
+
+
+  logout(){
+    this.router.navigate(['login']);
+    localStorage.clear();
   }
 }
