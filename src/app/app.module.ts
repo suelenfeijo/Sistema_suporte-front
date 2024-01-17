@@ -43,6 +43,7 @@ import { ToastrModule } from 'ngx-toastr'
 import { JwtModule } from '@auth0/angular-jwt';
 import { DecorationComponent } from './components/decoration/decoration.component'; 
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 
 
 
@@ -58,6 +59,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     TecnicoListComponent,
     LoginComponent,
     DecorationComponent,
+    TecnicoCreateComponent,
     
   ],
   imports: [
