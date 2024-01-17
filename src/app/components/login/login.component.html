@@ -9,7 +9,7 @@
     tudo que digito no input é adicionado em tempo real a variavel creds email -->
 
       <input [(ngModel)]="creds.email"
-      [formControl="email"]
+      [formControl]="email"
       required
        name="email" 
        matInput 
@@ -19,7 +19,7 @@
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Senha</mat-label>
       <input [(ngModel)]="creds.senha" 
-      [formControl="senha"]
+      [formControl]="senha"
       required
       name="senha"  
       type="password" 
@@ -27,7 +27,7 @@
       placeholder="ex: 123">
     </mat-form-field>
 
-    <button class="button mat-elevation-z4" mat-raised-button>Basic</button>
+    <button [disabled]="!validaCampos()" class="button mat-elevation-z4" mat-raised-button>Basic</button>
 </div>
 <!--double mustache -> mostra o valor da variável no html-->
  <!--{{creds.email}}-->  
