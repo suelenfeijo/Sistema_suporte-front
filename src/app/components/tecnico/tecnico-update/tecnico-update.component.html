@@ -1,1 +1,75 @@
-<p>tecnico-update works!</p>
+<div class="container mat-elevation-z4">
+    <form class="form">
+        <h1 class="fullWidth">Cadastrar Técnico</h1>
+        <img class="fullWidth" src="assets/img/tecnico-create.svg" alt="Help Desk Tecnico">
+    
+    
+        <section class="section">
+            <!--sempre que esse component inicia, o checked é marcado em cliente por padrão-->
+            <mat-checkbox (click)="addPerfil(0)" class="margin" color="primary">ADMIN</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(1)" [checked]=true class="margin" color="primary">CLIENTE</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(2)" class="margin" color="primary">TÉCNICO</mat-checkbox>
+          </section>
+    
+        
+            <mat-form-field class="fullWidth" appearance="legacy">
+              <mat-label>Nome</mat-label>
+              <input 
+              maxlength="50"
+              name="nome"
+              [(ngModel)]="tecnico.nome"
+              [formControl]="nome"
+              required
+              matInput 
+              placeholder="Ex: Fulano de tal">
+              <mat-icon matSuffix>assignment_ind</mat-icon>
+            </mat-form-field>
+         
+          
+          
+            <mat-form-field class="fullWidth" appearance="legacy">
+              <mat-label>CPF</mat-label>
+              <input
+              name="cpf"
+              [formControl]="cpf"
+              [(ngModel)]="tecnico.cpf"
+              required
+              matInput placeholder="Ex: 000.000.000.00"
+              mask="000.000.000.00">
+             
+              <mat-icon matSuffix>badge</mat-icon>
+            </mat-form-field>
+      
+          
+     
+            <mat-form-field class="fullWidth" appearance="legacy">
+              <mat-label>Email</mat-label>
+              <input 
+              name="email"
+              [formControl]="email"
+              [(ngModel)]="tecnico.email"
+              required
+              matInput placeholder="fulano@mail.com">
+              <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
+         
+          
+      
+            <mat-form-field class="fullWidth" appearance="legacy">
+              <mat-label>Senha</mat-label>
+              <input 
+              name="senha"
+              [formControl]="senha"
+              [(ngModel)]="tecnico.senha"
+              required
+              type="password" matInput placeholder="Ex:123">
+              <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+        
+    
+          <button  (click)="update()" [disabled]="!validaCampos()" mat-raised-button class="fullWidth mat-elevation-z4" color="primary">Atualizar</button>
+            <!--routerLink="../" -> retorna uma rota anterior-->
+          <button routerLink="../../" mat-raised-button class="fullWidth mat-elevation-z4" color="warn">Cancelar</button>
+       
+    <p >By Suelen Feijó</p>
+    </form></div>
