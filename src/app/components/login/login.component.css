@@ -26,9 +26,10 @@
   
     align-items: center;
     justify-content: center;
-    margin: auto auto auto 10rem ;
+    margin: auto auto auto 8.5rem ;
     width: 40%;
     height: 3rem;
+
     border-radius: 2rem;
     background: linear-gradient(180deg, rgba(65,170,235,1) 0%, rgba(151,15,255,1) 100%, rgba(2,175,210,1) 100%); 
     color: azure;
