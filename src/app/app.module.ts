@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
 // Para trabalhar com formulários no Angular 12 , adiciona validações de formularios no angular
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 

@@ -26,7 +26,7 @@
     width: 48%;
  }
  
- .descricao {
+ .observacoes {
    
     min-height: 10rem;
     resize: none;
@@ -38,3 +38,4 @@
     padding: 0 0;
 
  }
+ 
