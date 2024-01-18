@@ -11,7 +11,9 @@ import { ChamadoService } from 'src/app/services/chamado.service';
 })
 export class ChamadoListComponent implements OnInit {
 
+  /*base de dados sem filtro */
   ELEMENT_DATA: Chamado[] = []
+  /*array para dados filtrados */
   FILTERED_DATA: Chamado[] = []
 
   displayedColumns: string[] = ['id', 'titulo', 'cliente', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
@@ -60,12 +62,19 @@ export class ChamadoListComponent implements OnInit {
     }
   }
 
+  /*array -> array com todas as informações de elemento data (contendo todas as informações
+    da tabela), for each -> percorre cada elemento, se o status recebido no parametro for 
+    igual ao elemento percorrido atual, joga na nova list de chamados */ 
   orderByStatus(status: any): void{
     let list: Chamado[] = []
     this.ELEMENT_DATA.forEach(element => {
       if(element.status == status)
         list.push(element)
     });
+
+    /*dados filtrados = recebe a list (array de chamados) ,
+    cria uma nova datasource para armazenar os dados filtrados , e inicializa com o paginator
+    para não quebrar*/
     this.FILTERED_DATA = list;
     this.dataSource = new MatTableDataSource<Chamado>(list);
     this.dataSource.paginator = this.paginator;
