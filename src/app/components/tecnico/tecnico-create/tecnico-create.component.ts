@@ -37,7 +37,13 @@ export class TecnicoCreateComponent implements OnInit {
     this.service.create(this.tecnico).subscribe(() => {
       this.toast.success('Técnico cadastrado com sucesso', 'Cadastro')
     }, ex => {
-      console.log(ex);
+      if(ex.error.errors){
+        ex.error.errors.forEach(element => {
+          this.toast.error(element.message);
+        });
+      }else{
+        this.toast.error(ex.error.message); 
+      }
     })
   }
 
@@ -49,6 +55,7 @@ export class TecnicoCreateComponent implements OnInit {
     }else{
       this.tecnico.perfis.push(perfil);
       console.log(this.tecnico.perfis);
+
 
     }
   }
