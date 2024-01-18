@@ -9,6 +9,10 @@ import { DecorationComponent } from './components/decoration/decoration.componen
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ClienteCreateComponent } from './components/cliente/tecnico-create/cliente-create.component';
+import { ClienteUpdateComponent } from './components/cliente/tecnico-update/cliente-update.component';
+import { ClienteDeleteComponent } from './components/cliente/tecnico-delete/cliente-delete.component';
+import { ClienteListComponent } from './components/cliente/tecnico-list/cliente-list.component';
 
 const routes: Routes = [
   //quando o path for login oque renderiza é LoginComponent
@@ -28,10 +32,10 @@ const routes: Routes = [
   {path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent},
 
    //clientes 
-   {path: 'clientes', component: TecnicoListComponent},
-   {path: 'clientes/create', component: TecnicoCreateComponent},
-   {path: 'clientes/update/:id', component: TecnicoUpdateComponent},
-   {path: 'clientes/delete/:id', component: TecnicoDeleteComponent},
+   {path: 'clientes', component: ClienteListComponent},
+   {path: 'clientes/create', component: ClienteCreateComponent},
+   {path: 'clientes/update/:id', component: ClienteUpdateComponent},
+   {path: 'clientes/delete/:id', component: ClienteDeleteComponent},
  
 
   ]},
