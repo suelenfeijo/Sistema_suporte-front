@@ -13,6 +13,10 @@ import { ClienteCreateComponent } from './components/cliente/tecnico-create/clie
 import { ClienteUpdateComponent } from './components/cliente/tecnico-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/tecnico-delete/cliente-delete.component';
 import { ClienteListComponent } from './components/cliente/tecnico-list/cliente-list.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/chamado-delete.component';
 
 const routes: Routes = [
   //quando o path for login oque renderiza é LoginComponent
@@ -37,6 +41,12 @@ const routes: Routes = [
    {path: 'clientes/update/:id', component: ClienteUpdateComponent},
    {path: 'clientes/delete/:id', component: ClienteDeleteComponent},
  
+
+   //Chamados 
+   {path: 'chamados', component: ChamadoListComponent},
+   {path: 'chamados/create', component: ChamadoCreateComponent},
+   {path: 'chamados/update/:id', component: ChamadoUpdateComponent},
+   {path: 'chamados/delete/:id', component: ChamadoDeleteComponent},
 
   ]},
 ];
