@@ -27,6 +27,12 @@ const routes: Routes = [
   {path: 'tecnicos/update/:id', component: TecnicoUpdateComponent},
   {path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent},
 
+   //clientes 
+   {path: 'clientes', component: TecnicoListComponent},
+   {path: 'clientes/create', component: TecnicoCreateComponent},
+   {path: 'clientes/update/:id', component: TecnicoUpdateComponent},
+   {path: 'clientes/delete/:id', component: TecnicoDeleteComponent},
+ 
 
   ]},
 ];
