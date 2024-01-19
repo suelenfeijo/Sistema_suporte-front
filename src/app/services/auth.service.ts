@@ -3,7 +3,7 @@ import { Credenciais } from '../models/credenciais';
 import { HttpClient } from '@angular/common/http';
 import { API_CONFIG } from '../config/Api.config';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,8 @@ export class AuthService {
   jwtService: JwtHelperService = new JwtHelperService();
 
   constructor(private http: HttpClient,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   authenticate(creds: Credenciais) {
     return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
@@ -36,7 +37,7 @@ export class AuthService {
 
 
   logout(){
-    this.router.navigate(['login']);
+    this.router.navigate(['login'], {relativeTo: this.route});
     localStorage.clear();
   }
 }
