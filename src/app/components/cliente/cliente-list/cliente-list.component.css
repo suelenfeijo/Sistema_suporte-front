@@ -11,20 +11,23 @@ mat-form-field {
 }
 button {
   width: 40%;
-  border-radius: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
+  border-radius: .1rem;
+  font-weight: 500;
+  margin: 1rem 2.5rem;
+  background-color: rgb(255, 255, 255);
+  
+
 }
 h1 {
   width: 100%;
   text-align: center;
-  font-weight: 600;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .edit {
-  color: rgb(0, 6, 118);
+
+  color: rgb(0, 182, 130);
 }
 
 .delete {
-  color: rgb(137, 0, 0);
+  color: rgb(0, 0, 0);
 }

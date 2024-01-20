@@ -1,9 +1,14 @@
 <div class="container">
+
 <form class="form mat-elevation-z8">
+ 
     <div class="content">
     <h1>Programação Descomplicada - Suelen Feijó</h1>
-    <img src="assets/img/login-image.svg" alt="Programação Descomplicada - Suelen Feijó">
-    <mat-form-field class="full-width" appearance="legacy">
+    <a routerLink="home" >   <span class="star material-symbols-outlined">
+      star 
+      </span></a>
+   
+    <mat-form-field class="full-width" appearance="outline">
       <mat-label>Email</mat-label>
       <!--two way data binding angular -> [(ngModel)]="creds.email" tem que ter um name para não dar problema
     tudo que digito no input é adicionado em tempo real a variavel creds email -->
@@ -16,7 +21,7 @@
        placeholder="ciclano@mail.com">
     </mat-form-field>
 
-    <mat-form-field class="full-width" appearance="legacy">
+    <mat-form-field class="full-width" appearance="outline">
       <mat-label>Senha</mat-label>
       <input [(ngModel)]="creds.senha" 
       [formControl]="senha"

@@ -15,10 +15,18 @@ export class ChamadoService {
     return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/chamados/${id}`);
   }
 
+  findByIdDesassociados(id: any): Observable<Chamado> {
+    return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/chamados/desassociados/${id}`);
+  }
+
   findAll(): Observable<Chamado[]> {
     return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados`);
   }
 
+  
+  findDesassociados(): Observable<Chamado[]> {
+    return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados/desassociados`);
+  }
   create(chamado: Chamado): Observable<Chamado> {
     return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
   }

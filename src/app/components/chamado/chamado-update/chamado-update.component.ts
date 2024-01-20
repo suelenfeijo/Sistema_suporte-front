@@ -85,7 +85,7 @@ export class ChamadoUpdateComponent implements OnInit {
 
   validaCampos(): boolean {
     return this.prioridade.valid && this.status.valid && this.titulo.valid 
-       && this.observacoes.valid && this.tecnico.valid && this.cliente.valid
+        && this.tecnico.valid && this.cliente.valid
   }
 
   retornaStatus(status: any): string {

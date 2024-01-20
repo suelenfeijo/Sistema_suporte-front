@@ -3,14 +3,15 @@
     <h1>Listando chamados</h1>
  
     <button routerLink="create" class="mat-elevation-z8" mat-stroked-button color="primary">Novo chamado</button>
-  
+    <button routerLink="desassociados" class="mat-elevation-z8 perigo" mat-stroked-button color="warn"> Clientes/Funcionários Desassociados</button>
+
     <mat-form-field appearance="standard">
        <mat-label>Filter</mat-label>
        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
      </mat-form-field>
  
      <mat-radio-group color="primary">
-        <mat-radio-button (click)="findAll()" value="0">TODOS</mat-radio-button>
+        <mat-radio-button (click)="findAll()" >TODOS</mat-radio-button>
        <mat-radio-button (click)="orderByStatus(0)" value="0">ABERTO</mat-radio-button>
        <mat-radio-button (click)="orderByStatus(1)" value="1">ANDAMENTO</mat-radio-button>
        <mat-radio-button (click)="orderByStatus(2)" value="2">ENCERRADO</mat-radio-button>
