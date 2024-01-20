@@ -204,3 +204,31 @@ npm i @auth0/angular-jwt --save
  npm install --save ngx-mask@12.0.0
 troca branch a força.
  git checkout -f main
+
+
+ 
+
+
+no render, neste campo: Publish directory
+deve ser inserido o nome do app em package.json
+
+deve ficar assim: dist/helpdesk
+'dist de distribuição, isso é padrão.'
+
+também importante adicionar uma enviroment de versão do node.
+
+key: NODE_VERSION
+value: 14.17.1
+
+por segurança. add também uma enviroment
+
+key: CI
+value: false
+
+
+Redirect and Rewrite Rules
+
+source: /*
+destination: /index.html
+rewriting
+
