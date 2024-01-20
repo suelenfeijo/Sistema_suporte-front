@@ -1,6 +1,8 @@
 # Sistema_suporte-front
 
-
+* Angular 12v.
+* Aws S3 bucket
+* and more...
 
 <img src="src/assets/img/Helpdesk.gif" alt="video helpdesk"></img>
 
