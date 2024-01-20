@@ -2,7 +2,9 @@
 
 </br>
 
-<img src="src/assets/img/Helpdesk.gif">video helpdesk</img>
+<img src="src/assets/img/Helpdesk.gif" alt="video helpdesk"></img>
+
+
 
 
 
