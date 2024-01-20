@@ -1,7 +1,7 @@
 {
   "name": "helpdesk",
   "version": "0.0.0",
-  "homepage": "./login",
+  "homepage": ".",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --openssl-legacy-provider start",
