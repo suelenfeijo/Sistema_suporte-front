@@ -1,9 +1,10 @@
 {
   "name": "helpdesk",
   "version": "0.0.0",
+  "homepage": "./login",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --openssl-legacy-provider start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development"
   },
