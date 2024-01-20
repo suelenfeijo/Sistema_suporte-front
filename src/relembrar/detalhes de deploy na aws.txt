@@ -35,7 +35,6 @@ listar todas ssh
 ls ~/.ssh
 
  ssh-keygen -> gerar ssh
-30022003 - senha chave
 cat< ~/.ssh/id_ed25519.pub -> linux
 clip < ~/.ssh/id_ed25519.pub -> windows
 pbcopy < ~/.ssh/id_ed25519.pub -> (mac) copia oque tem dentro da pasta sshd e dentro do arq. id id_ed25519.pub
@@ -66,9 +65,8 @@ DNS público: domínio que pode usar para fazer chamadas para o servidor.
 
 
 conectar -> cliente ssh -> abrir o bash
-ec2-user (é o usuário usado) - e - ec2-54-226-239-246.compute-1.amazonaws.com (endereço dnv)
+ec2-user (é o usuário usado) - e -  (endereço dnv)
 também poderia ser usado o ipv4
-ssh ec2-user@ec2-54-226-239-246.compute-1.amazonaws.com
 
 yes
 
@@ -85,7 +83,7 @@ no terminal do spring boot
 scp -> digo que quero copiar e mandar pra algum lugar
 ./target/helpdesk-1.0.0-SNAPSHOT.jar -> diretorio e arquivo 
 ec2-user -> usuário, a instancia da aws
-ec2-54-226-239-246.compute-1.amazonaws.com -> endereço da instancia dns, mas pode ser ipv4 tbm
+ -> endereço da instancia dns, mas pode ser ipv4 tbm
 :/home/ec2-user -> especifico o lugar de paste (local de cola do arquivo enviado)
 
 scp ./target/helpdesk-1.0.0-SNAPSHOT.jar ec2-user@ec2-54-226-239-246.compute-1.amazonaws.com
@@ -99,7 +97,7 @@ para saber se o arquivo foi transferido usar : ls
  java -jar helpdesk-1.0.0-SNAPSHOT.jar -> roda a api dockerizada
 
 
-endereço ipv4: 54.226.239.246
+endereço ipv4: 
 
 
 
