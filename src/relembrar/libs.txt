@@ -1,0 +1,29 @@
+npm install -g @angular/cli@12.0.3
+
+npm install -g node@14.17.1
+ng add @angular/material
+
+criar components e pasta pelo angular CLI, o último é component, antes disso ele 
+entende como pasta.
+
+ng g c components/nav
+
+ng g c components/tecnico/tecnico-list
+
+//lib toast compatível com o projeto
+npm i ngx-toastr@14.0.0
+
+//criando serviço pelo angular cli
+ng g s services/auth
+
+//criando serviço guard pelo angular cli
+ng g guard auth/auth
+
+//criando interceptor pelo angular cli
+ng g interceptor interceptors/auth
+
+//instalando jwt para o front
+npm i @auth0/angular-jwt --save
+
+//lib ngx mascara
+npm install --save ngx-mask@12.0.0

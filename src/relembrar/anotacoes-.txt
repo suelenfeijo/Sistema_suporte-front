@@ -1,0 +1,206 @@
+
+
+
+npm install -g @angular/cli@12.0.3
+
+clear
+
+(minimal não gera arquivos de testes
+ng new helpdesk --minimal 
+
+angular route (sim (y)
+
+estilização css
+
+
+ng serve (iniciar projeto) 
+
+
+aula 2 
+checklist
+
+tsconfig - maior flexibilidade
+strict:false
+
+
+no app.component.ts
+
+
+criar o app.component.html na pasta app
+
+no app.component.html colocar h1 com hello works!
+angular.json
+inlineTemplate:false
+inlineStyle:false
+
+ng add @angular/material -> adicionar a lib material
+
+
+
+escolher o tema (template padrão)
+indigo & pink	
+
+Set up global Angular Material typography styles? (y)
+Set up browser animations for Angular Material? (y) 
+
+
+
+C:\Users\Suelen Feijo\Documents
+
+npm install -g node@14.17.1
+$ npm install -g node@14.17.1 -g @angular/cli@12.0.3
+bash
+export NODE_OPTIONS=--openssl-legacy-provider
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
+
+$ npm link @angular/cli
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+
+
+
+https://github.com/nvm-sh/nvm
+instalar o mvn
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+vim .bashrc   -entra no editor vim
+i -> entra no modo inserção
+
+adicionar: 
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+esc -> fecha modo inserção
+:wq -> salva e fecha o vim
+
+nvm ls-remote  -> listar todas as versões do node até o momento
+nvm install  v14.17.1 -> instalar versão do node escolhida
+nvm ls -> listar versões instaladas
+nvm use v14.17.1 -> usar uma das versões do meu node
+nvm alias default v14.17.1  -> versão padrão do node para todos os terminais
+trocar: template por: templateUrl: 'app.component.html'
+
+
+silenciando todos os avisos sobre sistema safe.directory do Git
+git config --global --add safe.directory '*'
+
+
+variavel de ambiente no angular -> local -> path :
+C:\Users\Suelen Feijo\AppData\Roaming\npm\node_modules\@angular\cli\bin
+
+variavel de ambiente no angular -> sistema-> path :
+C:\Users\Suelen Feijo\AppData\Roaming\npm\node_modules\@angular\cli\bin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aula 3 - adicionar imports
+
+
+ex: angular material -> components -> button -> api - copiar link de : API reference for Angular Material button
+em app.modules.ts -> adicionar api de referencia dos components
+
+
+
+
+em app.modules.ts
+
+adicionar components do angular material , trabalhar com formulários e requisições http
+
+
+// Para trabalhar com formulários no Angular 12 , adiciona validações de formularios no angular
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+// Para realizar requisições HTTP
+import { HttpClientModule } from '@angular/common/http';
+
+// Imports para componentes do Angular Material
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+
+
+
+
+
+
+aula 4 - adicionando primeira rota
+
+ng g c components/nav
+
+
+https://cssgradient.io -> gerar gradients css
+
+
+
+aula 6 - componente HOME
+
+Criar componente HOME
+
+Criar rota para o mesmo
+
+implementar html e css para o mesmo
+
+
+
+
+
+aula 8 tecnico list
+
+ng g c components/tecnico/tecnico-list
+
+
+
+aula 10 - login parte 2
+
+instalação de toaster com mensagens personalizadas
+
+npm i ngx-toastr --save (salvar no projeto em produção)
+
+npm i ngx-toastr@14.0.0 --save (versão compatível com o projeto)
+
+
+aula 11 - login parte 3
+
+s -> services
+ng g s services/auth
+
+
+//guardar rotas
+ng g guard auth/auth
+
+canActivate -> y
+
+
+ng g interceptor interceptors/auth
+
+npm i @auth0/angular-jwt --save
+
+
+
+ npm install --save ngx-mask@12.0.0
+troca branch a força.
+ git checkout -f main
