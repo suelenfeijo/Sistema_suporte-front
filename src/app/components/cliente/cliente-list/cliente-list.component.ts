@@ -23,6 +23,8 @@ para ser linkada com as colunas aqui declaradas do array*/
   constructor(private service:ClienteService) {}
 
   ngOnInit(): void {
+    /*inicia o component já renderizando o método findAll
+    ,assim, trazendo todos os dados do método */
     this.findAll();
   }
 

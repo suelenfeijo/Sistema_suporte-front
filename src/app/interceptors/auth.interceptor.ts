@@ -8,6 +8,8 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
+/*Interceptor de requisições http , estudar mais sobre */
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 

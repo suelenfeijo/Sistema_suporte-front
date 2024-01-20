@@ -70,10 +70,14 @@ export class ClienteUpdateComponent implements OnInit {
   
     addPerfil(perfil: any):void{
       if(this.cliente.perfis.includes(perfil)){
+        /*para corrigir o bug de adicionar perfil ao desmarcar check, 
+        se já incluso um perfil, entende-se que deseja remover,
+        remove da lista perfil a primeira ocorrência (lista percorrida, index) */ 
         this.cliente.perfis.splice(this.cliente.perfis.indexOf(perfil),1);
         console.log(this.cliente.perfis);
   
       }else{
+        /*se não, adiciona um perfil (push) na lista */
         this.cliente.perfis.push(perfil);
         console.log(this.cliente.perfis);
   

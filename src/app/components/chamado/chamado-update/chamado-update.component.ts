@@ -30,6 +30,8 @@ export class ChamadoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
   tecnicos: Tecnico[] = []
 
+  /*Relembrando -> FormControl: é quem faz ser possível utilizar as validações de 
+  formulários no angular*/ 
   prioridade: FormControl = new FormControl(null, [Validators.required]);
   status:     FormControl = new FormControl(null, [Validators.required]);
   titulo:     FormControl = new FormControl(null, [Validators.required]);
@@ -64,6 +66,8 @@ export class ChamadoUpdateComponent implements OnInit {
   update(): void {
     this.chamadoService.update(this.chamado).subscribe(resposta => {
       this.toastService.success('Chamado atualizado com sucesso', 'Atualizar chamado');
+      /*apenas o router.navigate não estava funcionando, então tive que 
+      usar o relativeTo, funcionou perfeitamente */ 
       this.router.navigate(['../../'], {relativeTo: this.route});
 
     }, ex => {
@@ -98,6 +102,8 @@ export class ChamadoUpdateComponent implements OnInit {
     }
   }
 
+  /*Converte o enum em código para texto de exibição (any -> string/number: string -> retorna uma
+  string*/ 
   retornaPrioridade(prioridade: any): string {
     if(prioridade == '0') {
       return 'BAIXA'

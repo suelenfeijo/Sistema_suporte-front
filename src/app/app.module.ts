@@ -63,7 +63,8 @@ import { ChamadoReadDsComponent } from './components/chamado/chamado-read-ds/cha
   declarations: [
     AppComponent,
 
-    //os components do projeto precisam estar declarados aqui
+    //os components do projeto precisam estar declarados aqui, ou sej
+    // tudo que for criado de component, preciso de import e declaration aqui
     NavComponent,
     HomeComponent,
     HeaderComponent,
@@ -85,6 +86,9 @@ import { ChamadoReadDsComponent } from './components/chamado/chamado-read-ds/cha
     ChamadoReadComponent,
     
   ],
+
+  /*Os imports de coisas fora do projeto, que são externas, precisam de import 
+  aqui */ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -118,6 +122,7 @@ import { ChamadoReadDsComponent } from './components/chamado/chamado-read-ds/cha
 
    NgxMaskModule.forRoot()
   ],
+  /*AuthInterceptorProvider é o component interceptor do pacote aqui interceptors */ 
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
   

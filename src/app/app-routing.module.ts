@@ -20,15 +20,16 @@ import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-
 import { ChamadoListDsComponent } from './components/chamado/chamado-list-ds/chamado-list-ds.component';
 import { ChamadoReadDsComponent } from './components/chamado/chamado-read-ds/chamado-read-ds.component';
 const routes: Routes = [
+
   //quando o path for login oque renderiza é LoginComponent
   {path:'login', component:LoginComponent},
+
+  //Rota vazio decorativa
   {path:'',component: DecorationComponent },
   //quando o path for vazio oque renderiza é NavComponent
   {path:'inicio',component: NavComponent, canActivate: [AuthGuard] ,   
   //a home é filha do path vazio , ela herda oque é renderizado no path '' , e é renderizado dentro dele
   children:   [{path: 'home', component: HomeComponent},
-
-
 
   //tecnicos -> filho de NavComponent, funciona igual home
   {path: 'tecnicos', component: TecnicoListComponent},
@@ -42,12 +43,11 @@ const routes: Routes = [
    {path: 'clientes/update/:id', component: ClienteUpdateComponent},
    {path: 'clientes/delete/:id', component: ClienteDeleteComponent},
  
-
-   //Chamados 
+   //Chamados de Dessasociados
    {path: 'chamados/desassociados', component: ChamadoListDsComponent},
    {path: 'chamados/desassociados/:id', component: ChamadoReadDsComponent},
 
-
+    //Chamados 
    {path: 'chamados', component: ChamadoListComponent},
    {path: 'chamados/create', component: ChamadoCreateComponent},  
    {path: 'chamados/update/:id', component: ChamadoUpdateComponent},

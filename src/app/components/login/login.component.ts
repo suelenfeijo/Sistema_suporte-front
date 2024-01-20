@@ -12,6 +12,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+
+  /*Interface que intermedia o email e senha na tentativa de login,
+  no servidor: CredenciaisDTO. na classe JWTAuthenticationFilter do backend do projeto tem 
+  mais informações sobre o funcionamento do fluxo e rotinas.*/ 
   creds: Credenciais = {
     email: '',
     senha: ''
@@ -23,10 +27,10 @@ export class LoginComponent implements OnInit {
   senha = new FormControl(null, Validators.minLength(3));
 
   constructor( 
+    /*toast -> serviço de mensagens*/ 
     private toast: ToastrService,
     private service: AuthService,
     private router: Router,
-    private ngZone: NgZone
 
     ) { }
 
@@ -38,11 +42,14 @@ export class LoginComponent implements OnInit {
       this.service.successfulLogin(resposta.headers.get('Authorization').substring(7));
         this.router.navigate(['inicio']);
       
-    }, () => {
+    },
+    /*caso de erro, chama uma função anonima com o toast de erro*/ 
+     () => {
       this.toast.error('Usuário e/ou senha inválidos');
     })
 }
 
+/* o email (formControl) retorna um true ou false*/
   validaCampos(): boolean {
     return this.email.valid && this.senha.valid
   }

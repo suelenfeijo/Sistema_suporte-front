@@ -48,11 +48,16 @@ export class ClienteDeleteComponent implements OnInit {
         this.toast.success('Técnico deletado com sucesso', 'Deletado');
         this.router.navigate(['../../'], {relativeTo: this.route});
       }, ex => {
+        /*error.errors é a lista de erros que é retornada do servidor
+        , e é usado um for , a variavel element percorre cada item e 
+        tras um toast de erro exibindo o log */
         if(ex.error.errors){
           ex.error.errors.forEach(element => {
             this.toast.error(element.message);
           });
         }else{
+          /*sendo apenas um erro, o servidor retorna error e o toast
+          exibe o erro */ 
           this.toast.error(ex.error.message); 
         }
       })

@@ -14,6 +14,10 @@ export class AuthGuard implements CanActivate {
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let authenticated = this.authService.isAuthenticated();
 
+    /*Se autenticado , retorne true, (libere as rotas) , caso não, navegue para
+    login (que é a rota que está fora do canActive) e bloqueie enquanto
+    não authenticado. (visualize o método isAuthenticated para saber mais. */ 
+
     if(authenticated) {
       return true;
     } else {

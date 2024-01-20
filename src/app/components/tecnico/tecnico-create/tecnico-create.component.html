@@ -28,12 +28,14 @@
       
         <mat-form-field class="fullWidth" appearance="legacy">
           <mat-label>CPF</mat-label>
+          <!-- mask="000.000.000.00" -> mascara de cpf -->
           <input
           name="cpf"
           [formControl]="cpf"
           [(ngModel)]="tecnico.cpf"
           required
           matInput placeholder="Ex: 000.000.000.00"
+          
           mask="000.000.000.00">
          
           <mat-icon matSuffix>badge</mat-icon>
