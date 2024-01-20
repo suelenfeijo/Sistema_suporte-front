@@ -1,0 +1,195 @@
+aws 
+
+vpc : virtual private clouds -> rede privada que só determinados tem acesso a esses computadores
+instância ec2 -> máquina virtual dentro da amazon.
+é possível controlar todo o tráfego na minha vpc, ou seja todas as máquinas.
+
+
+pesquiar: VPC -> criar vpc -> vpc e muito mais -> -> opções padrão (opcional mudar nome)->
+por ter selecionado vpc e mt mais, ele cria gateway e sub-rede -> 
+
+
+
+ec2 -> pesquisar e abrir painel -> security group -> ( controladores , tbm, de tráfego, em nível de instância. É um controle de tráfego
+a nível da instância da ec2 , funcionam como porteiros da instância (cada instância, máquina virtual), por padrão , quando criados bloqueiam td o tráfego de entrada
+e liberam todo tráfego de saída, atráves do security group, configuro quem pode entrar na instância, libera as requisições para a porta que roda o serviço , ou seja, libera
+uma porta específica e libera o acessa o acesso para fazer requisições nela)
+-> criar grupo de segurança 
+
+
+
+escolher vpc -> regras de entrada -> tcp personalizado (intevervalo (a porta que a api roda) , origem (definição de ip específico ou geral), regra 2 -> ssh  origem geral (0.0.0.0/0) qualquer local-IPv4 ->
+criar grupo de segurança.
+
+
+
+
+ssh é um protocolo de comunicação que permite as máquinas ter comunicação. um exemplo é o protocolo ssh.
+a diferença : comunicação é encriptografada, usando chave publica e privada, apenas quem tem chave privada, de fato,
+é quem pode se comunicar com minha instância.
+protocolo muito utilizado em logins e acesso remoto a computadores.
+ 
+
+listar todas ssh
+
+ls ~/.ssh
+
+ ssh-keygen -> gerar ssh
+30022003 - senha chave
+cat< ~/.ssh/id_ed25519.pub -> linux
+clip < ~/.ssh/id_ed25519.pub -> windows
+pbcopy < ~/.ssh/id_ed25519.pub -> (mac) copia oque tem dentro da pasta sshd e dentro do arq. id id_ed25519.pub
+
+copiar sempre a chave pública, a privada só eu posso ter acesso, se não pintam bolinha no meu pc
+(de volta a aws)
+- > pares de chaves -> ações -> importar par de chaves -> nome da máquina fisica para identificar
+
+
+-> instâncias -> definir nome -> sistema operacional (linux) -> t2.micro - > par de chaves
+
+
+configurações de rede -> editar - > grupos de segurança selecionar a vpc criada
+sub-net t -> us east 1b / us east 1a
+
+atribuir ip publico automaticamente -> publico -> (detalhe: em Dados do usuário - optional 
+é possível adicionar um script de inicialização para a instância)
+executar instância 
+
+em instâncias , é possível ver todas as instâncias criadas, enquanto tiver (em andamento)
+não tá pronta, quando executando, já conseguimos se conectar na máquina
+
+clicando no id, é possível ver todas as configurações.
+
+
+
+DNS público: domínio que pode usar para fazer chamadas para o servidor.
+
+
+conectar -> cliente ssh -> abrir o bash
+ec2-user (é o usuário usado) - e - ec2-54-226-239-246.compute-1.amazonaws.com (endereço dnv)
+também poderia ser usado o ipv4
+ssh ec2-user@ec2-54-226-239-246.compute-1.amazonaws.com
+
+yes
+
+sudo yum update -> verifica se tem atualização no linux
+
+sudo yum install java-17-amazon-corretto-headless -> instalando o java
+
+java --version -> verifica se o java tá ok
+
+
+
+no terminal do spring boot
+
+scp -> digo que quero copiar e mandar pra algum lugar
+./target/helpdesk-1.0.0-SNAPSHOT.jar -> diretorio e arquivo 
+ec2-user -> usuário, a instancia da aws
+ec2-54-226-239-246.compute-1.amazonaws.com -> endereço da instancia dns, mas pode ser ipv4 tbm
+:/home/ec2-user -> especifico o lugar de paste (local de cola do arquivo enviado)
+
+scp ./target/helpdesk-1.0.0-SNAPSHOT.jar ec2-user@ec2-54-226-239-246.compute-1.amazonaws.com
+:/home/ec2-user
+
+
+
+para saber se o arquivo foi transferido usar : ls
+
+
+ java -jar helpdesk-1.0.0-SNAPSHOT.jar -> roda a api dockerizada
+
+
+endereço ipv4: 54.226.239.246
+
+
+
+permitindo endereços personalizados
+
+-> route 53 (serviço da aws que permite gerenciamento de dns, gerenciamento de dominio) -> zonas hospedadas -> criar zona hospedada
+
+
+Estudar sobre o balanceador de carga , quem faz possível ser aceito protocolos https. E para aceitar
+https, é preciso ter um certificado ssl,
+
+forçar http para https - > ec2 -> instancias -> Balanceamento de carga -> Load balancers -> https htpps - > create -> nome
+
+
+Mapeamentos -> pelo menos 2 -> selecionar grupo de segurança
+Listeners e roteamento-> protocolo http -> port -> 80 -> criar grupo de destino -> (selecionar) instancias -> 
+Nome do grupo de destino (nomear) -> Verificações de integridade
+ -> /index.html
+
+ec2> frupos de destino > (selecionar vpc) > criar grupo de destino
+
+ Load balancers ->  Load balancers > selecionar o grupo de destino criado - > criar load balancer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deploy angular s3 bucket
+
+s3 bucket
+criar - > desmarcar bucket settings for block , e marcar turning off block, nomeia, e cria.
+
+dar o comando:
+ng build --prod
+
+arrastar arquivos para o bucket
+-> upload
+
+
+bucket -> properties -> static website hosting -> 
+edit -> enable -> host a static website -> 
+index document > index.html -> error document > repete. > salva
+
+
+
+
+adicionar:
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::sistema-suporte-bucket/*"
+        }
+    ]
+}
+
+
+nas políticas do bucket
+
+
+
+
+Bloquear acesso público (configurações do bucket) 
+(marcar apenas o turning e deixar tudo desmarcado)
+
+
+
+
+
+
+
+
